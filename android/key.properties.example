@@ -1,0 +1,6 @@
+# Copy this file to android/key.properties and replace every placeholder.
+# Never commit the real key.properties or keystore file.
+storeFile=../.signing/what-to-eat-release.jks
+storePassword=your-secure-store-password
+keyAlias=what-to-eat
+keyPassword=your-secure-key-password

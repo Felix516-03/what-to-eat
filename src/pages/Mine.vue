@@ -3,6 +3,7 @@ import { computed, onMounted, onUnmounted, ref } from "vue"
 
 import ConfirmModal from "../components/ConfirmModal.vue"
 import CustomShopsManager from "../components/CustomShopsManager.vue"
+import PrivacyPolicy from "../components/PrivacyPolicy.vue"
 import ProfileModuleCard from "../components/ProfileModuleCard.vue"
 import ShopPreferenceCard from "../components/ShopPreferenceCard.vue"
 import {
@@ -100,6 +101,7 @@ const moduleTitle = computed(() => ({
   favorites: "心头好",
   "cold-palace": "冷宫",
   "custom-shops": "我的店铺",
+  privacy: "隐私说明",
   stats: "宠幸统计"
 })[activeModule.value] || "我的")
 
@@ -108,6 +110,7 @@ const moduleDescription = computed(() => ({
   favorites: "评分 4 分及以上，都是你认真偏爱的店。",
   "cold-palace": "被朕暂时遗忘的味道。",
   "custom-shops": "把你私藏的饭点，也加进抽卡池。",
+  privacy: "了解哪些数据保存在本机，哪些会进入饭圈云端。",
   stats: "看看这个月的胃都去了哪里。"
 })[activeModule.value] || "")
 
@@ -264,6 +267,15 @@ onUnmounted(() => {
         <span class="custom-entry-arrow" aria-hidden="true">›</span>
       </button>
 
+      <button class="privacy-entry" @click="openModule('privacy')">
+        <span class="privacy-entry-icon" aria-hidden="true">🛡️</span>
+        <span>
+          <strong>隐私说明</strong>
+          <small>查看数据如何保存和使用</small>
+        </span>
+        <span class="custom-entry-arrow" aria-hidden="true">›</span>
+      </button>
+
       <section class="recent-section">
         <div class="section-title-row">
           <div>
@@ -356,6 +368,10 @@ onUnmounted(() => {
 
       <section v-else-if="activeModule === 'custom-shops'" class="module-content">
         <CustomShopsManager />
+      </section>
+
+      <section v-else-if="activeModule === 'privacy'" class="module-content">
+        <PrivacyPolicy />
       </section>
 
       <section v-else class="module-content stats-content">
@@ -475,6 +491,37 @@ onUnmounted(() => {
 .custom-shops-entry strong { font-size: 15px; }
 .custom-shops-entry small { margin-top: 4px; color: #8a817b; font-size: 11px; }
 .custom-entry-arrow { color: #d7c7bc; font-size: 23px; }
+
+.privacy-entry {
+  display: grid;
+  width: 100%;
+  margin-top: 10px;
+  padding: 13px 16px;
+  grid-template-columns: 38px minmax(0, 1fr) auto;
+  gap: 11px;
+  align-items: center;
+  border: 1px solid #f0e3da;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .82);
+  color: #2b2826;
+  cursor: pointer;
+  text-align: left;
+}
+
+.privacy-entry-icon {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 12px;
+  background: #f3f1ff;
+  font-size: 17px;
+}
+
+.privacy-entry strong,
+.privacy-entry small { display: block; }
+.privacy-entry strong { font-size: 14px; }
+.privacy-entry small { margin-top: 3px; color: #8a817b; font-size: 11px; }
 
 .recent-section { margin-top: 30px; }
 

@@ -18,6 +18,7 @@ dist-ssr
 !.env.example
 *.jks
 *.keystore
+.signing/
 key.properties
 android/key.properties
 android/local.properties
