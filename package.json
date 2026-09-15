@@ -1,0 +1,25 @@
+{
+  "name": "what-to-eat",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "android:sync": "npm run build && npx cap sync android",
+    "android:open": "npm run android:sync && npx cap open android",
+    "android:apk": "npm run android:sync && cd android && gradlew.bat assembleDebug"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.2",
+    "@capacitor/core": "^8.5.2",
+    "@supabase/supabase-js": "^2.116.0",
+    "vue": "^3.5.42"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.5.2",
+    "@vitejs/plugin-vue": "^6.0.8",
+    "vite": "^8.3.0"
+  }
+}
