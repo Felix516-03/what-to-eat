@@ -35,21 +35,6 @@ npm run dev
 
 macOS / Linux 请将 `copy` 换成 `cp`。
 
-## 配置 Supabase
-
-1. 在 [Supabase](https://supabase.com/) 创建项目。
-2. 打开 **Authentication → Sign In / Providers → Anonymous**，启用匿名登录。
-3. 打开 **SQL Editor**，执行 [`supabase/schema.sql`](./supabase/schema.sql)。
-4. 从 **Project Settings → API** 获取 Project URL 与 anon / publishable key。
-5. 复制 `.env.example` 为 `.env`，填写自己的配置：
-
-```dotenv
-VITE_SUPABASE_URL=https://your-project-ref.supabase.co
-VITE_SUPABASE_ANON_KEY=your-anon-or-publishable-key
-```
-
-前端只能使用 anon / publishable key。不要把 `service_role` key、数据库密码或签名密钥放入源码。
-
 ## 数据安全
 
 饭圈业务表全部启用 RLS：
@@ -58,8 +43,6 @@ VITE_SUPABASE_ANON_KEY=your-anon-or-publishable-key
 - 作者身份由 `auth.uid()` 判断，客户端不能自行伪造。
 - 点赞通过数据库原子函数切换，避免重复操作。
 - 删除帖子后，其评论与点赞通过外键级联清理。
-
-仓库不会提交 `.env`、Android 本机 SDK 路径、生成后的网页包、签名文件、APK/AAB 或构建缓存。`.env.example` 仅保留安全占位符。
 
 完整隐私政策见 [`PRIVACY.md`](./PRIVACY.md)。
 
