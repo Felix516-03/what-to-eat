@@ -28,6 +28,13 @@ export function getMealInfo(date = new Date()) {
     }
   }
 
+  if (hour < 18) {
+    return {
+      greeting: "下午好！",
+      mealType: "晚餐"
+    }
+  }
+
   return {
     greeting: "晚上好！",
     mealType: "晚餐"

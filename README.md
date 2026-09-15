@@ -2,7 +2,7 @@
 
 一款帮助你解决“今天吃什么”的移动端应用。项目基于 Vue 3 + Vite 开发，通过 Capacitor 打包为 Android App，并使用 Supabase 提供饭圈社区的云端数据与匿名登录。
 
-当前版本：`v1.0.1`
+当前版本：`v1.0.2`
 
 ![What to eat 像素风图标](./assets/app-icon-source.png)
 
@@ -95,4 +95,4 @@ android/app/build/outputs/bundle/release/app-release.aab
 
 ## Release
 
-可安装的 Android 版本会放在 [GitHub Releases](https://github.com/Felix516-03/what-to-eat/releases) 中。`v1.0.1` 是首个使用项目正式签名证书构建的版本。
+可安装的 Android 版本会放在 [GitHub Releases](https://github.com/Felix516-03/what-to-eat/releases) 中。`v1.0.2` 修正了下午问候语和评论回复框遮挡问题。

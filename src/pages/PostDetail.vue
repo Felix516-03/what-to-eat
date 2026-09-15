@@ -272,7 +272,7 @@ onMounted(loadDetail)
 .comments-section > h2 span { color: #e06b48; }
 .no-comments { padding: 30px 4px; color: #93877f; font-size: 12px; text-align: center; }
 .load-comments { display: block; margin: 14px auto; padding: 8px 15px; border: 1px solid #eadbd2; border-radius: 11px; background: #fff; color: #d36040; cursor: pointer; font-size: 11px; }
-.reply-box { position: sticky; z-index: 4; bottom: calc(73px + env(safe-area-inset-bottom)); margin: 18px -5px 0; padding: 11px; border: 1px solid #eadfd8; border-radius: 18px; background: rgba(255,250,246,.96); box-shadow: 0 10px 28px rgba(48,34,27,.12); backdrop-filter: blur(12px); }
+.reply-box { position: relative; z-index: 1; margin: 18px -5px 0; padding: 11px; border: 1px solid #eadfd8; border-radius: 18px; background: rgba(255,250,246,.96); box-shadow: 0 10px 28px rgba(48,34,27,.12); }
 .reply-box textarea { width: 100%; min-height: 55px; padding: 8px 9px; resize: none; border: 0; outline: none; background: transparent; color: #37312d; font: inherit; font-size: 13px; line-height: 1.55; }
 .reply-actions { display: flex; gap: 8px; align-items: center; }
 .reply-actions > span { margin-left: auto; color: #a4968e; font-size: 9px; }
