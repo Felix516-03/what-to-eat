@@ -95,4 +95,4 @@ android/app/build/outputs/apk/debug/app-debug.apk
 
 ## Release
 
-可安装的 Android 测试版 APK 会放在本仓库的 GitHub Releases 中。`v1.0.0` 是首个公开打包版本。
+可安装的 Android 测试版 APK 会放在 [GitHub Releases](https://github.com/Felix516-03/what-to-eat/releases) 中。`v1.0.0` 是首个打包版本。
